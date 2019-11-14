@@ -35,7 +35,8 @@ link_directories(${rclcpp_LIBRARY_DIRS})
 
 add_executable(move_group_interface src/move_group_interface_tutorial.cpp)
 target_link_libraries(move_group_interface ${rclcpp_LIBRARIES} ${Boost_LIBRARIES} ${moveit_ros_planning_interface_LIBRARIES})
-install(TARGETS move_group_interface DESTINATION lib/${PROJECT_NAME} DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+install(TARGETS move_group_interface DESTINATION lib/${PROJECT_NAME})
+install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 
 ament_export_include_directories(include)
 ament_export_dependencies(moveit_ros_planning_interface)
